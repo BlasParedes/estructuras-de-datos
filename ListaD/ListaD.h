@@ -6,7 +6,21 @@
 #include "Nodo.h"
 using std::cout;
 using std::ostream;
-
+template <class T>
+class Nodo{
+    private:
+        T info;
+        Nodo<T> *Sig,*Ant;
+    public:
+        Nodo() : Sig(NULL),Ant(NULL){
+        }
+        void set_info(T val){info = val;}   
+        void set_sig(Nodo<T> *p){Sig = p;}    
+        void set_Ant(Nodo<T> *p){Ant = p;}        
+        T get_inf(){return info;}
+        Nodo<T>* get_sig(){return Sig;}
+        Nodo<T>* get_Ant(){return Ant;}
+};
 template <class T>
 class ListaD
 {
@@ -15,7 +29,7 @@ class ListaD
 	public:
 		ListaD(){cab = NULL;}
 		~ListaD(){}
-		int Agregar(T,int tipo=0);//si tipo es diferente de cero la lista no guardará repetidos
+		int Agregar(T,int tipo=0);//si tipo es diferente de cero la lista no guardarÃ¡ repetidos
 		int Eliminar(T);
 		void Imprimir();
 		T get_cabezera(){return cab->get_inf();}
