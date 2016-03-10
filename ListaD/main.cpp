@@ -8,7 +8,9 @@ int main(int argc, char** argv) {
 	for(int i = 0;i<=3; i++){
 		NodoE nodo;
 		char control[60];
+		cout<<"Escriba su cadena\n";
 		cin.getline(control,60);
+		cout<<"\n";
 		nodo.set_cadena(control);
 		list.Agregar(nodo);
 	}
