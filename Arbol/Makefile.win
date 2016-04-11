@@ -1,0 +1,33 @@
+# Project: Proyecto1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o ArbolBB.o $(RES)
+LINKOBJ  = main.o ArbolBB.o $(RES)
+LIBS =  -L"C:/Users/usuario/AppData/Local/Temp/RarSFX1/lib"  
+INCS =  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/include" 
+CXXINCS =  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/lib/gcc/mingw32/3.4.2/include"  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/include/c++/3.4.2/backward"  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/include/c++/3.4.2/mingw32"  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/include/c++/3.4.2"  -I"C:/Users/usuario/AppData/Local/Temp/RarSFX1/include" 
+BIN  = Proyecto1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Proyecto1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Proyecto1.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+ArbolBB.o: ArbolBB.cpp
+	$(CPP) -c ArbolBB.cpp -o ArbolBB.o $(CXXFLAGS)
